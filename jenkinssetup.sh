@@ -13,10 +13,12 @@ sudo wget https://www-eu.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-mav
 sudo tar -xvzf apache-maven-3.6.1-bin.tar.gz
 sudo mv apache-maven-3.6.1 maven
 sudo rm apache-maven-3.6.1-bin.tar.gz
-echo "export M2_HOME=/opt/maven" >> /etc/profile.d/mavenenv.sh
-echo "M2_HOME=/opt/maven export PATH="$"{M2_HOME}/bin:"$"{PATH}" >> /etc/profile.d/mavenenv.sh
+sudo touch /etc/profile.d/mavenenv.sh
 sudo chmod 777 /etc/profile.d/mavenenv.sh
-source /etc/profile.d/mavenenv.sh
+sudo echo "export M2_HOME=/opt/maven" >> /etc/profile.d/mavenenv.sh
+sudo echo "M2_HOME=/opt/maven export PATH="$"{M2_HOME}/bin:"$"{PATH}" >> /etc/profile.d/mavenenv.sh
+sudo chmod 777 /etc/profile.d/mavenenv.sh
+sudo source /etc/profile.d/mavenenv.sh
 mvn --version
 #
 #Install jenkins
