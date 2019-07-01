@@ -20,7 +20,7 @@ mvn -version
 sudo sed -i 's/8080/8888/' /etc/default/jenkins
 #
 # To update new port need to restart jenkins
-# sudo service jenkins stop
-# sudo service jenkins start
+sudo service jenkins stop
+sudo service jenkins start
 # to execute this script use below command
 #curl -sSL https://raw.githubusercontent.com/itrainspartans/itraindevops/master/jenkinssetup.sh | sh
