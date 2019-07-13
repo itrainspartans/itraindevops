@@ -1,6 +1,6 @@
 # Install Java
 sudo apt update
-sudo apt install openjdk-8-jre-headless -y
+sudo apt install openjdk-8-jdk-headless
 java -version
 #
 #Install Jenkins
