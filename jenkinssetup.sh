@@ -18,7 +18,7 @@ sudo apt install maven -y
 mvn -version
 #
 # change default port of jenkins from 8080 to 8888
-sudo sed -i 's/8080/8888/' /etc/default/jenkins
+#sudo sed -i 's/8080/8888/' /etc/default/jenkins
 #
 # To update new port need to restart jenkins
 sudo service jenkins stop
