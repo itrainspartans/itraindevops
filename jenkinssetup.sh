@@ -1,6 +1,7 @@
 # Install Java
 sudo apt update
-#sudo apt install openjdk-8-jdk-headless -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
 #sudo apt-get install default-jdk -y
 java -version
 #
@@ -14,6 +15,8 @@ sudo systemctl status jenkins
 #
 #Install Maven
 sudo apt update
+sudo apt-get update -y
+sudo apt-get upgrade -y
 sudo apt install maven -y
 mvn -version
 #
