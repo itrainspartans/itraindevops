@@ -1,30 +1,31 @@
-# Install Java
-sudo apt update
-sudo apt-get update -y
-sudo apt-get upgrade -y
-#sudo apt-get install default-jdk -y
+#Install Default JDK available and it is 1.11.0
+sudo apt-get update
+sudo apt-get install default-jdk -y
 java -version
-#
+javac -version
+sudo chmod 777 /etc/environment
+echo JAVA_HOME="/usr/lib/jvm/java-1.11.0-openjdk-amd64" >> /etc/environment
+source /etc/environment
+echo $JAVA_HOME
+
+
 #Install Jenkins
+cd ~
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt update
-sudo apt install jenkins -y
-sudo systemctl start jenkins
+sudo echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+sudo apt-get update
+sudo apt-get install jenkins -y
 sudo systemctl status jenkins
-#
+
 #Install Maven
-sudo apt update
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt install maven -y
-mvn -version
-#
-# change default port of jenkins from 8080 to 8888
-#sudo sed -i 's/8080/8888/' /etc/default/jenkins
-#
-# To update new port need to restart jenkins
-sudo service jenkins stop
-sudo service jenkins start
-# to execute this script use below command
-#curl -sSL https://raw.githubusercontent.com/itrainspartans/itraindevops/master/jenkinssetup.sh | sh
+cd /opt
+sudo wget https://www-eu.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+sudo tar -xvzf apache-maven-3.6.1-bin.tar.gz
+sudo rm apache-maven-3.6.1-bin.tar.gz
+sudo mv apache-maven-3.6.1 maven
+sudo touch /etc/profile.d/mavenenv.sh
+sudo chmod 777 /etc/profile.d/mavenenv.sh
+echo "export PATH=/opt/maven/bin:$"PATH"" >> /etc/profile.d/mavenenv.sh	
+mvn --version
