@@ -28,6 +28,7 @@ sudo mv apache-maven-3.6.1 maven
 sudo touch /etc/profile.d/mavenenv.sh
 sudo chmod 777 /etc/profile.d/mavenenv.sh
 echo "export PATH=/opt/maven/bin:$"PATH"" >> /etc/profile.d/mavenenv.sh	
+apt install maven
 mvn --version
 # to execute this script use below command
 #curl -sSL https://raw.githubusercontent.com/itrainspartans/itraindevops/master/jenkinssetup.sh | sh
