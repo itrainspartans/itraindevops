@@ -2,7 +2,6 @@
 sudo apt-get update
 sudo apt-get install default-jdk -y
 java -version
-javac -version
 sudo chmod 777 /etc/environment
 echo JAVA_HOME="/usr/lib/jvm/java-1.11.0-openjdk-amd64" >> /etc/environment
 source /etc/environment
@@ -25,10 +24,11 @@ sudo wget https://www-eu.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-mav
 sudo tar -xvzf apache-maven-3.6.1-bin.tar.gz
 sudo rm apache-maven-3.6.1-bin.tar.gz
 sudo mv apache-maven-3.6.1 maven
+apt install maven 3.6.1
 sudo touch /etc/profile.d/mavenenv.sh
 sudo chmod 777 /etc/profile.d/mavenenv.sh
 echo "export PATH=/opt/maven/bin:$"PATH"" >> /etc/profile.d/mavenenv.sh	
-apt install maven
+apt install maven 3.6.1
 mvn --version
 # to execute this script use below command
 #curl -sSL https://raw.githubusercontent.com/itrainspartans/itraindevops/master/jenkinssetup.sh | sh
