@@ -32,3 +32,4 @@ apt install maven 3.6.1
 mvn --version
 # to execute this script use below command
 #curl -sSL https://raw.githubusercontent.com/itrainspartans/itraindevops/master/jenkinssetup.sh | sh
+
